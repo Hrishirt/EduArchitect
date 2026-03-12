@@ -1,0 +1,18 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Course Architect – Python Dependencies
+# Install with:  pip install -r requirements.txt
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Web framework & ASGI server
+fastapi==0.115.5
+uvicorn[standard]==0.32.1
+
+# AI providers
+anthropic==0.40.0          # Claude SDK  (primary)
+openai==1.57.0             # OpenAI SDK  (optional / fallback)
+
+# Config / environment
+python-dotenv==1.0.1
+
+# Data validation (bundled with FastAPI but pinned for reproducibility)
+pydantic==2.10.3

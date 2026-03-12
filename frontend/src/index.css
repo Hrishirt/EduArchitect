@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Base resets ─────────────────────────────────────────────────────────── */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-brand-500/10;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-400 to-cyan-400;
+  }
+
+  .glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ── Prose overrides for react-markdown inside modals ───────────────────── */
+.tutorial-prose h2 {
+  @apply text-xl font-semibold text-brand-300 mt-6 mb-2 border-b border-gray-700 pb-1;
+}
+.tutorial-prose h3 {
+  @apply text-lg font-semibold text-gray-200 mt-4 mb-2;
+}
+.tutorial-prose p {
+  @apply text-gray-300 leading-relaxed mb-3;
+}
+.tutorial-prose ul {
+  @apply list-disc list-inside text-gray-300 mb-3 space-y-1;
+}
+.tutorial-prose ol {
+  @apply list-decimal list-inside text-gray-300 mb-3 space-y-1;
+}
+.tutorial-prose li {
+  @apply leading-relaxed;
+}
+.tutorial-prose strong {
+  @apply text-white font-semibold;
+}
+.tutorial-prose code {
+  @apply bg-gray-800 text-cyan-300 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+.tutorial-prose pre {
+  @apply my-4 rounded-lg overflow-x-auto;
+}
+.tutorial-prose pre code {
+  @apply bg-transparent text-inherit p-0;
+}
+.tutorial-prose blockquote {
+  @apply border-l-4 border-brand-500 pl-4 text-gray-400 italic my-4;
+}
+.tutorial-prose hr {
+  @apply border-gray-700 my-6;
+}
